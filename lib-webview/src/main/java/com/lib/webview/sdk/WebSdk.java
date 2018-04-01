@@ -9,7 +9,7 @@ public class WebSdk {
         private static final WebSdk INSTANCE = new WebSdk();
     }
 
-    private static WebSdk getInstance() {
+    public static WebSdk getInstance() {
         return Holder.INSTANCE;
     }
 

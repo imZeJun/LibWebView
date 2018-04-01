@@ -1,12 +1,13 @@
 package com.lib.webview.hook;
 
 
-import android.net.http.SslError;
+import android.graphics.Bitmap;
 import android.os.Message;
 import android.view.KeyEvent;
-import android.webkit.*;
 
 public class WebViewClient {
+
+    public void onPageStarted(WebView view, String url, Bitmap favicon) {}
 
     public void onPageFinished(WebView webView, String url) {}
 

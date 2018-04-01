@@ -14,11 +14,11 @@ import com.lib.webview.hook.WebView;
 import com.lib.webview.hook.WebChromeClient;
 
 
-public class RealWebChromeClient extends android.webkit.WebChromeClient {
+public class WebKitWebChromeClient extends android.webkit.WebChromeClient {
 
     private WebChromeClient webChromeClient;
 
-    public RealWebChromeClient(WebChromeClient webChromeClient) {
+    public WebKitWebChromeClient(WebChromeClient webChromeClient) {
         this.webChromeClient = webChromeClient;
     }
 

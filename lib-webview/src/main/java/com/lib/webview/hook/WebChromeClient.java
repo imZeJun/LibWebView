@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Message;
 import android.view.View;
 
+import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
+
 public class WebChromeClient {
 
     public boolean onConsoleMessage(ConsoleMessage consoleMessage) { return false; }
@@ -48,18 +50,28 @@ public class WebChromeClient {
     public static class FileChooserParams {
 
         private android.webkit.WebChromeClient.FileChooserParams fileChooserParams;
+        private com.tencent.smtt.sdk.WebChromeClient.FileChooserParams qqFileChooserParams;
 
         public FileChooserParams(android.webkit.WebChromeClient.FileChooserParams fileChooserParams) {
             this.fileChooserParams = fileChooserParams;
+        }
+
+        public FileChooserParams(com.tencent.smtt.sdk.WebChromeClient.FileChooserParams qqFileChooserParams) {
+            this.qqFileChooserParams = qqFileChooserParams;
         }
     }
 
     public static class CustomViewCallback {
 
         private android.webkit.WebChromeClient.CustomViewCallback customViewCallback;
+        private IX5WebChromeClient.CustomViewCallback qqCustomViewCallback;
 
         public CustomViewCallback(android.webkit.WebChromeClient.CustomViewCallback customViewCallback) {
             this.customViewCallback = customViewCallback;
+        }
+
+        public CustomViewCallback(IX5WebChromeClient.CustomViewCallback qqCustomViewCallback) {
+            this.qqCustomViewCallback = qqCustomViewCallback;
         }
     }
 

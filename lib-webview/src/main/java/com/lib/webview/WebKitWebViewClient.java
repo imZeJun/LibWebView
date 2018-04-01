@@ -13,17 +13,17 @@ import com.lib.webview.hook.WebResourceRequest;
 import com.lib.webview.hook.WebView;
 import com.lib.webview.hook.WebViewClient;
 
-public class RealWebViewClient extends android.webkit.WebViewClient {
+public class WebKitWebViewClient extends android.webkit.WebViewClient {
 
     private WebViewClient webViewClient;
 
-    public RealWebViewClient(WebViewClient webViewClient) {
+    public WebKitWebViewClient(WebViewClient webViewClient) {
         this.webViewClient = webViewClient;
     }
 
     @Override
     public void onPageStarted(android.webkit.WebView view, String url, Bitmap favicon) {
-        super.onPageStarted(view, url, favicon);
+        webViewClient.onPageStarted(new WebView(view), url, favicon);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class RealWebViewClient extends android.webkit.WebViewClient {
 
     @Override
     public void onReceivedSslError(android.webkit.WebView view, android.webkit.SslErrorHandler handler, SslError error) {
-        webViewClient.onReceivedSslError(new WebView(view), new SslErrorHandler(handler), error);
+        webViewClient.onReceivedSslError(new WebView(view), new SslErrorHandler(handler), new com.lib.webview.hook.SslError(error));
     }
 
     @Override
