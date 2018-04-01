@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LibUtils.iml" filepath="$PROJECT_DIR$/LibUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lib-utils/lib-utils.iml" filepath="$PROJECT_DIR$/lib-utils/lib-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-webview/lib-webview.iml" filepath="$PROJECT_DIR$/lib-webview/lib-webview.iml" />
     </modules>
   </component>
