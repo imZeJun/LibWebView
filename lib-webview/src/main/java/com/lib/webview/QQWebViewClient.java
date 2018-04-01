@@ -10,6 +10,8 @@ import com.lib.webview.hook.SslErrorHandler;
 import com.lib.webview.hook.WebResourceError;
 import com.lib.webview.hook.WebResourceRequest;
 import com.lib.webview.hook.WebView;
+import com.lib.webview.hook.qq.QQClientCertRequest;
+import com.lib.webview.hook.qq.QQHttpAuthHandler;
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
 import com.tencent.smtt.sdk.WebViewClient;
 
@@ -63,7 +65,7 @@ public class QQWebViewClient extends WebViewClient {
 
     @Override
     public void onReceivedClientCertRequest(com.tencent.smtt.sdk.WebView view, com.tencent.smtt.export.external.interfaces.ClientCertRequest request) {
-        webViewClient.onReceivedClientCertRequest(new WebView(view), new ClientCertRequest(request));
+        webViewClient.onReceivedClientCertRequest(new WebView(view), new QQClientCertRequest(request));
     }
 
     @Override
@@ -88,7 +90,7 @@ public class QQWebViewClient extends WebViewClient {
 
     @Override
     public void onReceivedHttpAuthRequest(com.tencent.smtt.sdk.WebView view, com.tencent.smtt.export.external.interfaces.HttpAuthHandler handler, String host, String realm) {
-        webViewClient.onReceivedHttpAuthRequest(new WebView(view), new HttpAuthHandler(handler), host, realm);
+        webViewClient.onReceivedHttpAuthRequest(new WebView(view), new QQHttpAuthHandler(handler), host, realm);
     }
 
 }

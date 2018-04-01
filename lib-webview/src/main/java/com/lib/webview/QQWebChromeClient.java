@@ -6,10 +6,10 @@ import android.net.Uri;
 import android.os.Message;
 import android.view.View;
 
-import com.lib.webview.hook.ConsoleMessage;
 import com.lib.webview.hook.ValueCallback;
 import com.lib.webview.hook.WebStorage;
 import com.lib.webview.hook.WebView;
+import com.lib.webview.hook.qq.QQConsoleMessage;
 import com.tencent.smtt.export.external.interfaces.GeolocationPermissionsCallback;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
 import com.tencent.smtt.sdk.WebChromeClient;
@@ -24,7 +24,7 @@ public class QQWebChromeClient extends WebChromeClient {
 
     @Override
     public boolean onConsoleMessage(com.tencent.smtt.export.external.interfaces.ConsoleMessage consoleMessage) {
-        return webChromeClient.onConsoleMessage(new ConsoleMessage(consoleMessage));
+        return webChromeClient.onConsoleMessage(new QQConsoleMessage(consoleMessage));
     }
 
     @Override
